@@ -3,7 +3,7 @@
     <div>
       <logo />
       <ul>
-        <li v-for="blog in blogPosts" :key=blog>{{ blog }}</li>
+        <li v-for="blog in blogPosts" :key="blog">{{ blog }}</li>
       </ul>
     </div>
   </div>
