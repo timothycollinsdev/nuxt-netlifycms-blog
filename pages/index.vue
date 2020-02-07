@@ -2,7 +2,9 @@
   <div class="container">
     <div>
       <logo />
-      
+      <ul>
+        <li v-for="blog in blogPosts" :key=blog>{{ blog }}</li>
+      </ul>
     </div>
   </div>
 </template>
@@ -18,7 +20,12 @@ export default {
   },
   components: {
     Logo
-  }
+  },
+  computed: {
+    blogPosts() {
+      return this.$store.state.blogPosts;
+    },
+  },
 }
 </script>
 
