@@ -18,7 +18,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: 'rgb(9, 170, 62)' },
   /*
   ** Global CSS
   */
@@ -33,15 +33,20 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    
   ],
+ 
   /*
   ** Nuxt.js modules
   */
   modules: [
     // Doc: https://bootstrap-vue.js.org
-    'bootstrap-vue/nuxt',
+    '@nuxtjs/markdownit',
     '@nuxtjs/pwa',
   ],
+  markdownit: {
+    injected: true
+  },
   /*
   ** Build configuration
   */
@@ -53,3 +58,5 @@ export default {
     }
   }
 }
+//  "bootstrap": "^4.1.3",
+// "bootstrap-vue": "^2.0.0",

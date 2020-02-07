@@ -1,17 +1,18 @@
 <template>
-  <div class="container">
+  <div>
     <div>
-      <logo />
       <h1>All Posts</h1>
       <ul>
-        <li v-for="blog in blogPosts" :key="blog">{{ blog }}</li>
+        <li v-for="blog in blogPosts" :key="blog.slug">
+          <nuxt-link :to='blog.slug'>{{ blog.title }}</nuxt-link>
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+
 
 export default {
   head() {
@@ -19,14 +20,21 @@ export default {
       script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
     };
   },
-  components: {
-    Logo
+  data(){
+    return {
+      open: false,
+    }
   },
   computed: {
     blogPosts() {
       return this.$store.state.blogPosts;
     },
   },
+  methods: {
+  	toggle() {
+    	this.open = !this.open
+    }
+  }
 }
 </script>
 
