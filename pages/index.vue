@@ -2,6 +2,7 @@
   <div class="container">
     <div>
       <logo />
+      <h1>All Posts</h1>
       <ul>
         <li v-for="blog in blogPosts" :key="blog">{{ blog }}</li>
       </ul>
